@@ -17,7 +17,13 @@ $(document).ready(function () {
     });
 
     function getWord() {
-        $.get("http://localhost:8080/word", function (data) {
+        let url = "http://localhost:8080"
+
+        if (location.hostname !== "localhost" || location.hostname !== "127.0.0.1") {
+            url = "https://scrumble-de.herokuapp.com";
+        }
+
+        $.get(url + "/word", function (data) {
             localStorage['current.word'] = data.word
             localStorage['current.shuffled'] = data.shuffled
             localStorage['current.meaning'] = data.meaning
