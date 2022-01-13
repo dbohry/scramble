@@ -23,7 +23,7 @@ $(document).ready(function () {
         let url = "http://localhost:8080"
 
         if (location.hostname !== "localhost" || location.hostname !== "127.0.0.1") {
-            url = "https://scrumble-de.herokuapp.com";
+            url = "https://scramble-de.herokuapp.com";
         }
 
         $.get(url + "/word", function (data) {
