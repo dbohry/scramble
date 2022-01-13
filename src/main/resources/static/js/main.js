@@ -3,10 +3,13 @@ $(document).ready(function () {
     setNickname();
     getWord();
 
-    $("#answer-form").submit(function () {
-        var answer = $("#answer").val();
+    $("#answer").focus();
 
-        if (answer === localStorage['current.word']) {
+    $("#answer-form").submit(function () {
+        let answer = $("#answer").val();
+        let currentWord = localStorage['current.word'];
+
+        if (removeWS(answer) === removeWS(currentWord)) {
             alert("correct!");
             getWord();
         } else {
@@ -38,6 +41,10 @@ $(document).ready(function () {
             localStorage['user.nickname'] = prompt("Please enter your name");
             $("#nickname").text(localStorage['user.nickname']);
         }
+    }
+
+    function removeWS(value) {
+        return value.replace(/\s/g, "");
     }
 
 });
