@@ -2,12 +2,22 @@ body {
     background-color: #3498db;
     color: #ecf0f1;
     font-family: 'Roboto', sans-serif;
-    font-size: x-large;
+    font-size: 100%;
     padding: 20px;
 }
 
+#content {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+}
+
 #word {
-    font-size: xxx-large;
+    font-size: 6rem;
     color: #f1c40f;
     font-weight: bold;
 }
@@ -17,6 +27,7 @@ form > div {
 }
 
 #answer{
+    margin-top: 20px;
     background-image: url("http://3.bp.blogspot.com/-4oAWWCcNNz4/Tjr3nKNyVUI/AAAAAAAAPLU/Pouua-pNsEY/s1600/sq.gif");
     width: 195px;
     height: 18px;
